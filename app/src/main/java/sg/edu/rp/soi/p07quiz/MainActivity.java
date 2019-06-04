@@ -28,13 +28,14 @@ public class MainActivity extends AppCompatActivity {
         spinner = findViewById(R.id.spinner);
         lv = findViewById(R.id.lv);
 
+        //add to arraylist
         al = new ArrayList<>();
         al.add("Apple");
         al.add("Ball");
         al.add("Cat");
 
 
-
+        //spinner
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -46,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 //store value in colour
                                 String a = al.get(position);
-                                Log.d("Item Clicked: ",a);
                                 aa.notifyDataSetChanged();
+                                Log.d("Item Clicked: ",a);
                                 //Toast.makeText(MainActivity.this,"Item Clicked: "+a,Toast.LENGTH_LONG).show();
                             }
                         });
@@ -77,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        //create an arrayAdapter - aa
+        //set the adapter for listview - lv
+        //al- arraylist
         aa = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, al );
         lv.setAdapter(aa);
 

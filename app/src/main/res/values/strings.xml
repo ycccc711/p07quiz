@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">P07Quiz</string>
+
     <string-array name="mode">
         <item>LogCat</item>
         <item>Toast</item>
     </string-array>
+
 </resources>
