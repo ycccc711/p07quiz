@@ -46,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 //store value in colour
                                 String a = al.get(position);
-                                Toast.makeText(MainActivity.this,"Item Clicked: "+a,Toast.LENGTH_LONG).show();
+                                Log.d("Item Clicked: ",a);
+                                //Toast.makeText(MainActivity.this,"Item Clicked: "+a,Toast.LENGTH_LONG).show();
                             }
                         });
                         break;
