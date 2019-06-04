@@ -41,11 +41,25 @@ public class MainActivity extends AppCompatActivity {
 
                 switch(position){
                     case 0:
-                        type ="Logcat";
+                        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                //store value in colour
+                                String a = al.get(position);
+                                Toast.makeText(MainActivity.this,a,Toast.LENGTH_LONG).show();
+                            }
+                        });
                         break;
 
                     case 1:
-                        type = "Toast";
+                        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                //store value in colour
+                                String a = al.get(position);
+                                Toast.makeText(MainActivity.this,a,Toast.LENGTH_LONG).show();
+                            }
+                        });
                         //Toast.makeText(MainActivity.this, "Item Clicked: "+al, Toast.LENGTH_SHORT).show();
                         break;
                 }
@@ -58,16 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
-        lv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(type.equals("Logcat")){
-                    Log.d("Item Clicked: "+ al.get(position));
-                }else{
-                    Toast.makeText(MainActivity.this, "Item Clicked: "+al.get(position), Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+
 
         aa = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, al );
         lv.setAdapter(aa);
